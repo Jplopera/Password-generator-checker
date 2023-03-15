@@ -44,8 +44,14 @@ StrongChecker.addEventListener('click', () => {
     if (password.match(/[!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?]/)) {
         strength++;
     }
+    if (password.length >= 8) {
+        strength++;
+    }
+    if (password.length >= 15) {
+        strength++;
+    }
     console.log(strength);
-    if (password === 'Select 1 box at least') {
+    if (password === 'Select 1 checkbox at least') {
         passwordStrength.value = 0
     } else {
         passwordStrength.value = strength
@@ -69,7 +75,7 @@ function generatePassword(length, lower, upper, number, symbol) {
 
     // Doesn't have a selected type
     if (typesCount === 0) {
-        return 'Select 1 box at least';
+        return 'Select 1 checkbox at least';
     }
 
     // Create a loop
