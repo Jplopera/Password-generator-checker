@@ -1,3 +1,4 @@
+// Document Object Model (DOM)
 const resultEl = document.getElementById('result');
 const lengthEl = document.getElementById('length');
 const uppercaseEl = document.getElementById('uppercase');
@@ -8,6 +9,7 @@ const generateEl = document.getElementById('generate');
 const clipboard = document.getElementById('clipboard');
 const strongEL = document.getElementById('passwordStrength');
 
+//Random function obj
 const randomFunc = {
     lower: get_Lower,
     upper: get_Upper,
@@ -15,6 +17,7 @@ const randomFunc = {
     symbol: get_Symbol
 }
 
+//Copy to clipboard event
 clipboard.addEventListener('click', () => {
     const textarea = document.createElement('textarea');
     const password = resultEl.innerText;
@@ -29,6 +32,7 @@ clipboard.addEventListener('click', () => {
     alert('Password copied :)');
 });
 
+//Strong check
 StrongChecker.addEventListener('click', () => {
     const password = resultEl.innerText;
     let strength = 0;
@@ -50,7 +54,7 @@ StrongChecker.addEventListener('click', () => {
     if (password.length >= 15) {
         strength++;
     }
-    console.log(strength);
+    //If no box selected
     if (password === 'Select 1 checkbox at least') {
         passwordStrength.value = 0
     } else {
@@ -58,6 +62,7 @@ StrongChecker.addEventListener('click', () => {
     }
 })
 
+//Checkboxes
 generate.addEventListener('click', () => {
     const length = +lengthEl.value;
     const hasLower = lowercaseEl.checked;
@@ -68,6 +73,7 @@ generate.addEventListener('click', () => {
     resultEl.innerText = generatePassword(length, hasLower, hasUpper, hasNumber, hasSymbol);
 });
 
+//Generate Password function
 function generatePassword(length, lower, upper, number, symbol) {
     let generatedPassword = '';
     const typesCount = lower + upper + number + symbol;
@@ -78,24 +84,18 @@ function generatePassword(length, lower, upper, number, symbol) {
         return 'Select 1 checkbox at least';
     }
 
-    // Create a loop
+    // Create a loop for password
     for (let i = 0; i < length; i += typesCount) {
         typesArr.forEach(type => {
             const funcName = Object.keys(type)[0];
             generatedPassword += randomFunc[funcName]();
         });
     }
-
     const finalPassword = generatedPassword.slice(0, length);
-
-
-
     return finalPassword;
-
-
 }
 
-
+// Ger char random functions
 function get_Lower() {
     const lowercaseChars = "abcdefghijklmnopqrstuvwxyz";
     return lowercaseChars[Math.floor(Math.random() * lowercaseChars.length)];
