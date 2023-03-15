@@ -34,6 +34,7 @@ input[type=checkbox] {
 	width: 400px;
 	height: 450px;
 	max-width: 110%;
+	border-radius: 25px;
 }
 
 .result-container {
@@ -70,11 +71,13 @@ input[type=checkbox] {
 	font-size: 16px;
 	padding: 8px 12px;
 	background-color: #b9ab57;
+	border-radius: 25px;
 }
 
 .btn-large {
 	display: block;
 	width: 100%;
+	border-radius: 25px;
 }
 
 .setting {
@@ -96,6 +99,7 @@ input[type=checkbox] {
 	right: 5px;
 	height: 40px;
 	width: 40px;
+	border-radius: 25px;
 }
 progress {
 	background-color: bisque;

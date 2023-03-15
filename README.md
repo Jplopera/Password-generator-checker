@@ -13,3 +13,10 @@ This proyect was made with the propose of generate passwords based on certain ch
 ## Bonus features
 
 - [ ] User can see the password strength
+
+## Author
+- Juan Pablo Lopera Tobón [Github](https://github.com/Jplopera)
+
+## Support Link:
+- [App Ideas](https://github.com/florinpop17/app-ideas)
+- [Password stregth recommendation](https://passwordsgenerator.net)
