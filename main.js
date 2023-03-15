@@ -6,7 +6,7 @@ const numbersEl = document.getElementById('numbers');
 const symbolsEl = document.getElementById('symbols');
 const generateEl = document.getElementById('generate');
 const clipboard = document.getElementById('clipboard');
-const strongEL = document.getElementById('StrongChecker');
+const strongEL = document.getElementById('passwordStrength');
 
 const randomFunc = {
     lower: get_Lower,
@@ -45,20 +45,10 @@ StrongChecker.addEventListener('click', () => {
         strength++;
     }
     console.log(strength);
-    const container = document.querySelector('.conteiner');
-    let strongChecker = strength;
-    if (strongChecker <= 1) {
-        container.classList.add('weak');
-        container.classList.remove('medium');
-        container.classList.remove('strong');
-    } else if (strongChecker >= 1 && strongChecker <= 3) {
-        container.classList.remove('weak');
-        container.classList.add('medium');
-        container.classList.remove('strong');
+    if (password === 'Select 1 box at least') {
+        passwordStrength.value = 0
     } else {
-        container.classList.remove('weak');
-        container.classList.remove('medium');
-        container.classList.add('strong');
+        passwordStrength.value = strength
     }
 })
 
