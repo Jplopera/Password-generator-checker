@@ -91,9 +91,20 @@ input[type=checkbox] {
 	margin: 8px 0;
 }
 .container .strongChecker .btn {
-	font-size: 20px;
+	font-size: 15px;
 	top: 5px;
 	right: 5px;
 	height: 40px;
 	width: 40px;
+}
+progress {
+	background-color: bisque;
+	-webkit-appearance: none;
+	accent-color: coral;
+}
+progress::-webkit-progress-bar {
+	background-color: pink;
+}
+progress::-webkit-progress-value {
+	background-color: coral;
 }
